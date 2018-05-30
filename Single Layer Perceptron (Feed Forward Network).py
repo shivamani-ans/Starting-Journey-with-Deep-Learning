@@ -19,6 +19,7 @@ class NeuralNetwork():
         for iteration in range(number_of_training_iterations):
             output = self.think(training_set_inputs)
             error = training_set_outputs - output
+            #print(error)
             adjustment = dot(training_set_inputs.T, error * self.__sigmoid_derivative(output)) #why product of MM(inputs, error*sigmoid_derivative(output))
             self.synaptic_weights += adjustment
     
